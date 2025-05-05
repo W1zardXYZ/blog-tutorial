@@ -1,5 +1,16 @@
 ---
+const pageTitle = "About Me";
 
+const identity = {
+  firstName: "Manu",
+  country: "Germany",
+  occupation: "Designer",
+  hobbies: ["D&D", "Gaming", "Jogging", "Game Dev"],
+};
+const skills = ["HTML", "CSS", "JavaScript", "Blender", "Astro", "UE5"];
+
+const skillColor = "navy";
+const fontWeight = "3rem";
 ---
 
 <html lang="en">
@@ -8,15 +19,37 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>About Me</title>
+		<title>{pageTitle}</title>
+        <style define:vars={{skillColor, fontWeight}}>
+            h1 {
+                color : tomato;
+                font-size: 5rem;
+                font-family: Gabarito, sans-serif;
+            }
+            .skill {
+                color : var(--skillColor);
+                font-weight: bold;
+            }
+        </style>
 	</head>
 	<body>
         <a href="/">Home</a>
-		<a href="/about/">About</a>
+		<a href="/about/">{pageTitle}</a>
         <a href="/blog/">Blog</a>
-		<h1>About Me</h1>
+		<h1>{pageTitle}</h1>
         <h2>... and the stuff I build</h2>
         <p>I am working on this actually very nice tutorial.</p>
         <p>Hopefully this will update as I go :)</p>
+
+        <p>some things about me are:</p>
+        <ul>
+            <li>I am called {identity.firstName} and I like living in {identity.country}, but I move around a lot.</li>
+            {identity.hobbies.length >= 2 &&
+                <li>But when I settle down for a little while, I like doing: {identity.hobbies[2]} and {identity.hobbies[1]}</li>
+            }
+        </ul>
+        <p>My Skills include:</p>
+        <ul>{skills.map((skill) => <li class="skill">{skill}</li>)}
+        </ul>
 	</body>
 </html>
