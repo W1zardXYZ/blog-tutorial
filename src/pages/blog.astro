@@ -1,4 +1,8 @@
 ---
+import Navigation from "@/components/Navigation.astro";
+import Footer from '@/components/Footer.astro';
+import "@/styles/global.css";
+
 const pageTitle = "Blog"
 ---
 
@@ -11,9 +15,7 @@ const pageTitle = "Blog"
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-        <a href="/">Home</a>
-		<a href="/about/">About</a>
-        <a href="/blog/">{pageTitle}</a>
+		<Navigation />
 		<h1>A {pageTitle} so great, it will leave you stunned</h1>
         <h3>or not, who really knows, eh?</h3>
         <p>Read some of this... or don't</p>
@@ -22,5 +24,6 @@ const pageTitle = "Blog"
             <li><a href="/posts/post-02/">Post 02</a></li>
             <li><a href="/posts/post-03/">Post 03</a></li>
         </ul>
+		<Footer />
 	</body>
 </html>

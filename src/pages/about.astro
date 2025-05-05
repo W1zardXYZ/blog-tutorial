@@ -1,4 +1,8 @@
 ---
+import Navigation from "@/components/Navigation.astro";
+import Footer from '@/components/Footer.astro';
+import "@/styles/global.css";
+
 const pageTitle = "About Me";
 
 const identity = {
@@ -10,7 +14,6 @@ const identity = {
 const skills = ["HTML", "CSS", "JavaScript", "Blender", "Astro", "UE5"];
 
 const skillColor = "navy";
-const fontWeight = "3rem";
 ---
 
 <html lang="en">
@@ -20,11 +23,9 @@ const fontWeight = "3rem";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
-        <style define:vars={{skillColor, fontWeight}}>
+        <style define:vars={{skillColor}}>
             h1 {
                 color : tomato;
-                font-size: 5rem;
-                font-family: Gabarito, sans-serif;
             }
             .skill {
                 color : var(--skillColor);
@@ -33,9 +34,7 @@ const fontWeight = "3rem";
         </style>
 	</head>
 	<body>
-        <a href="/">Home</a>
-		<a href="/about/">{pageTitle}</a>
-        <a href="/blog/">Blog</a>
+        <Navigation />
 		<h1>{pageTitle}</h1>
         <h2>... and the stuff I build</h2>
         <p>I am working on this actually very nice tutorial.</p>
@@ -51,5 +50,6 @@ const fontWeight = "3rem";
         <p>My Skills include:</p>
         <ul>{skills.map((skill) => <li class="skill">{skill}</li>)}
         </ul>
+        <Footer />
 	</body>
 </html>
