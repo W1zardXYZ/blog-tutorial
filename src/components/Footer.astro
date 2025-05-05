@@ -2,7 +2,15 @@
 import Social from "./Social.astro"
 ---
 
-<footer class="footer">
+<style>
+    footer {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+
+<footer>
     <Social platform="twitter" username="ManuelGlck" />
     <Social platform="github" username="W1zardxyz" />
 </footer>
