@@ -1,6 +1,7 @@
 ---
-import Navigation from "@/components/Navigation.astro";
 import Footer from '@/components/Footer.astro';
+import Header from "@/components/Header.astro";
+
 import "@/styles/global.css";
 
 const pageTitle = "Blog"
@@ -15,7 +16,7 @@ const pageTitle = "Blog"
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<Navigation />
+		<Header />
 		<h1>A {pageTitle} so great, it will leave you stunned</h1>
         <h3>or not, who really knows, eh?</h3>
         <p>Read some of this... or don't</p>
@@ -25,5 +26,8 @@ const pageTitle = "Blog"
             <li><a href="/posts/post-03/">Post 03</a></li>
         </ul>
 		<Footer />
+		<script>
+			import "@/scripts/menu.js"
+		</script>
 	</body>
 </html>

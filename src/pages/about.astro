@@ -1,5 +1,5 @@
 ---
-import Navigation from "@/components/Navigation.astro";
+import Header from "@/components/Header.astro";
 import Footer from '@/components/Footer.astro';
 import "@/styles/global.css";
 
@@ -34,7 +34,7 @@ const skillColor = "navy";
         </style>
 	</head>
 	<body>
-        <Navigation />
+        <Header />
 		<h1>{pageTitle}</h1>
         <h2>... and the stuff I build</h2>
         <p>I am working on this actually very nice tutorial.</p>
@@ -51,5 +51,8 @@ const skillColor = "navy";
         <ul>{skills.map((skill) => <li class="skill">{skill}</li>)}
         </ul>
         <Footer />
+        <script>
+			import "@/scripts/menu.js"
+		</script>
 	</body>
 </html>
