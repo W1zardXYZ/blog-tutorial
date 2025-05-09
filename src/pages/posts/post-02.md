@@ -1,4 +1,5 @@
 ---
+layout: "@/layouts/MarkdownPostLayout.astro"
 title: My Second Blog Post
 author: Me
 description: "After starting with some Astro, I thought, thats pretty good"

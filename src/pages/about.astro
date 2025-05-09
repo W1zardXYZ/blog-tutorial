@@ -1,6 +1,5 @@
 ---
-import Header from "@/components/Header.astro";
-import Footer from '@/components/Footer.astro';
+import BaseLayout from "@/layouts/BaseLayout.astro";
 import "@/styles/global.css";
 
 const pageTitle = "About Me";
@@ -16,27 +15,17 @@ const skills = ["HTML", "CSS", "JavaScript", "Blender", "Astro", "UE5"];
 const skillColor = "navy";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-        <style define:vars={{skillColor}}>
-            h1 {
-                color : tomato;
-            }
-            .skill {
-                color : var(--skillColor);
-                font-weight: bold;
-            }
-        </style>
-	</head>
-	<body>
-        <Header />
-		<h1>{pageTitle}</h1>
-        <h2>... and the stuff I build</h2>
+<BaseLayout pageTitle={pageTitle}>
+    <style is:global define:vars={{skillColor}}>
+        h1 {
+            color : tomato;
+        }
+        .skill {
+            color : var(--skillColor);
+            font-weight: bold;
+        }
+    </style>
+    <h2>... and the stuff I build</h2>
         <p>I am working on this actually very nice tutorial.</p>
         <p>Hopefully this will update as I go :)</p>
 
@@ -50,9 +39,4 @@ const skillColor = "navy";
         <p>My Skills include:</p>
         <ul>{skills.map((skill) => <li class="skill">{skill}</li>)}
         </ul>
-        <Footer />
-        <script>
-			import "@/scripts/menu.js"
-		</script>
-	</body>
-</html>
+</BaseLayout>

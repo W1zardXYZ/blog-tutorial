@@ -1,4 +1,5 @@
 ---
+layout: "@/layouts/MarkdownPostLayout.astro"
 title: My Third Blog Post
 author: Manu
 description: "I had pretty much no challanges, but I had enough of these before"
